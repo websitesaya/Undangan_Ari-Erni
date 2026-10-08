@@ -1,25 +1,33 @@
 /* =========================================================
-   THE WEDDING OF ARI & ERNI — MAROON & GOLD THEME
-   Design tokens
+   THE WEDDING OF ARI & ERNI — COKLAT TUA CALEM & CREAM THEME
+   Section berselang-seling: coklat / cream / coklat / cream ...
    ========================================================= */
 :root{
-  --navy-deep:     #4B0B16;   /* maroon tua (latar utama) */
-  --navy:          #6D1224;   /* maroon */
-  --navy-mid:      #861A30;
-  --navy-line:     #B5586A;
-  --navy-soft:     rgba(242,217,138,.08);
-  --white:         #FFFFFF;
-  --ivory:         #560F1D;
-  --ivory-line:    rgba(212,175,55,.38);
-  --gold:          #D4AF37;
-  --gold-bright:   #F2D98A;
-  --gold-deep:     #E3BF55;
-  --ink:           #F2D98A;   /* teks utama = emas */
-  --ink-soft:      #D9BE74;
-  --on-navy:       #F2D98A;
-  --on-navy-soft:  rgba(242,217,138,.8);
-  --shadow:        0 18px 40px -20px rgba(20,2,6,.7);
-  --shadow-navy:   0 20px 45px -18px rgba(15,1,4,.8);
+  /* Coklat */
+  --brown-deep:    #3B2A1E;
+  --brown:         #4E3A2B;
+  --brown-mid:     #6B5240;
+
+  /* Cream */
+  --cream:         #F7F0E1;
+  --cream-2:       #EFE4CE;
+  --cream-line:    #DCCBA6;
+
+  /* Emas */
+  --gold:          #C9A24B;
+  --gold-bright:   #EBD494;   /* emas muda: untuk teks di atas coklat */
+  --gold-deep:     #8F6B1F;   /* emas tua: untuk teks di atas cream  */
+
+  /* Teks di atas CREAM */
+  --ink:           #3E2C20;
+  --ink-soft:      #6A5444;
+
+  /* Teks di atas COKLAT */
+  --on-brown:      #F4E8CC;
+  --on-brown-soft: rgba(244,232,204,.82);
+
+  --shadow:        0 18px 40px -20px rgba(59,42,30,.55);
+  --shadow-dark:   0 20px 45px -18px rgba(20,12,6,.7);
 
   --font-display: 'Cormorant Garamond', serif;
   --font-body:    'EB Garamond', serif;
@@ -35,7 +43,7 @@ body{
   margin:0;
   font-family:var(--font-body);
   color:var(--ink);
-  background:var(--navy-deep);
+  background:var(--brown-deep);
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -46,7 +54,7 @@ img{ max-width:100%; display:block; }
   max-width:var(--card-max);
   margin:0 auto;
   position:relative;
-  background:var(--navy-deep);
+  background:var(--cream);
   min-height:100vh;
   box-shadow:0 0 80px rgba(0,0,0,.55);
 }
@@ -92,7 +100,7 @@ section.alt .eyebrow{ color:var(--gold-bright); }
   font-weight:600;
   font-size:2rem;
   text-align:center;
-  color:var(--gold-bright);
+  color:var(--brown);
   margin:.2em 0;
 }
 section.alt .section-title{ color:var(--gold-bright); }
@@ -104,16 +112,21 @@ section.alt .section-title{ color:var(--gold-bright); }
   font-size:.95rem;
   margin-bottom:1.4rem;
 }
-section.alt .section-kicker{ color:var(--on-navy-soft); }
+section.alt .section-kicker{ color:var(--on-brown-soft); }
 
+/* Section default = CREAM, section.alt = COKLAT */
 section{
   padding:64px 28px;
   position:relative;
-  background:var(--navy);
+  background:var(--cream);
   color:var(--ink);
-  border-top:1px solid var(--ivory-line);
+  border-top:1px solid var(--cream-line);
 }
-section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px solid rgba(212,175,55,.3); }
+section.alt{
+  background:var(--brown);
+  color:var(--on-brown);
+  border-top:1px solid rgba(201,162,75,.35);
+}
 
 /* =========================================================
    1. OPENING / COVER
@@ -125,35 +138,35 @@ section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px s
   margin:0 auto;
   background:
     url('assets/images/Latar.jpg') center/cover no-repeat,
-    radial-gradient(circle at 50% 20%, var(--navy-mid), var(--navy-deep) 70%);
+    radial-gradient(circle at 50% 20%, var(--brown-mid), var(--brown-deep) 70%);
   color:var(--gold-bright);
   display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
   text-align:center;
   padding:40px 30px 56px;
   overflow:hidden;
 }
-/* darkens the lower portion of the photo so text stays legible */
+/* menggelapkan bagian bawah foto agar teks tetap terbaca */
 .cover-scrim{
   position:absolute; inset:0; z-index:1;
   background:linear-gradient(180deg,
-    rgba(30,3,9,.55) 0%,
-    rgba(30,3,9,.12) 24%,
-    rgba(30,3,9,.3) 50%,
-    rgba(30,3,9,.8) 76%,
-    rgba(30,3,9,.94) 100%);
+    rgba(30,20,12,.55) 0%,
+    rgba(30,20,12,.12) 24%,
+    rgba(30,20,12,.3) 50%,
+    rgba(30,20,12,.8) 76%,
+    rgba(30,20,12,.94) 100%);
   pointer-events:none;
 }
 #cover::before{
   content:"";
   position:absolute; inset:14px;
-  border:1px solid rgba(212,175,55,.55);
+  border:1px solid rgba(201,162,75,.6);
   pointer-events:none;
   z-index:2;
 }
 #cover::after{
   content:"";
   position:absolute; inset:22px;
-  border:1px solid rgba(212,175,55,.28);
+  border:1px solid rgba(201,162,75,.3);
   pointer-events:none;
   z-index:2;
 }
@@ -177,7 +190,7 @@ section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px s
   color:var(--gold-bright);
   line-height:1;
   margin:8px 0 4px;
-  text-shadow:0 2px 18px rgba(242,217,138,.3);
+  text-shadow:0 2px 18px rgba(235,212,148,.3);
 }
 .cover-names{
   font-family:var(--font-display);
@@ -187,12 +200,12 @@ section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px s
 }
 .cover-guest-label{
   font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--gold-bright); opacity:.85; margin-top:0;
+  color:var(--gold-bright); opacity:.9; margin-top:0;
 }
 .cover-family-invite{
   display:flex; justify-content:center; align-items:flex-start; gap:0;
   margin-top:22px;
-  font-size:.72rem; color:var(--gold-bright);
+  font-size:.72rem; color:var(--on-brown);
 }
 .cover-family-invite .fam-col{
   flex:0 1 128px; text-align:center;
@@ -208,16 +221,17 @@ section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px s
 }
 .cover-family-invite .fam-divider{
   width:1px; align-self:stretch; margin:2px 20px 0;
-  background:linear-gradient(180deg,transparent,rgba(212,175,55,.55),transparent);
+  background:linear-gradient(180deg,transparent,rgba(201,162,75,.6),transparent);
 }
 .cover-guest-name{
   font-family:var(--font-display);
   font-size:1.35rem;
   margin-top:6px;
   padding-bottom:8px;
-  border-bottom:1px solid rgba(212,175,55,.5);
+  border-bottom:1px solid rgba(201,162,75,.55);
   display:inline-block;
   min-width:180px;
+  color:var(--on-brown);
 }
 .btn-open{
   margin-top:26px;
@@ -233,7 +247,7 @@ section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px s
   cursor:pointer;
   transition:background .35s ease, color .35s ease, transform .2s ease;
 }
-.btn-open:hover{ background:var(--gold); color:var(--navy-deep); }
+.btn-open:hover{ background:var(--gold); color:var(--brown-deep); }
 .btn-open:active{ transform:scale(.97); }
 .btn-open svg{ vertical-align:-3px; margin-right:8px; }
 
@@ -247,8 +261,8 @@ section.alt{ background:var(--navy-deep); color:var(--on-navy); border-top:1px s
   z-index:70;
   background:
     repeating-linear-gradient(90deg,
-      var(--navy-mid) 0 18px,
-      var(--navy-deep) 18px 36px);
+      var(--brown-mid) 0 18px,
+      var(--brown-deep) 18px 36px);
   box-shadow:inset 0 0 60px rgba(0,0,0,.5);
   transition:transform 1.35s cubic-bezier(.77,0,.18,1);
   pointer-events:none;
@@ -266,7 +280,7 @@ body.curtain-open #curtain-left{ transform:translateX(-102%); }
 body.curtain-open #curtain-right{ transform:translateX(102%); }
 
 /* =========================================================
-   3. SNOW OVERLAY
+   3. SNOW / SERBUK EMAS OVERLAY
    ========================================================= */
 #snow-canvas{
   position:fixed; inset:0;
@@ -277,12 +291,12 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 }
 
 /* =========================================================
-   4. QUOTE / HERO INTRO
+   4. QUOTE / HERO INTRO  (COKLAT)
    ========================================================= */
 #quote{
   text-align:center;
-  background:linear-gradient(180deg,var(--navy-deep),var(--navy));
-  color:var(--gold-bright);
+  background:linear-gradient(180deg,var(--brown-deep),var(--brown));
+  color:var(--on-brown);
   padding:70px 32px;
 }
 #quote .verse-frame{
@@ -311,7 +325,7 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 #quote .cover-family-invite{ margin-top:34px; }
 
 /* =========================================================
-   5. COUPLE SECTION
+   5. COUPLE SECTION  (CREAM)
    ========================================================= */
 .couple-grid{
   display:flex; flex-direction:column; gap:48px;
@@ -323,7 +337,7 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 }
 .couple-photo-inner{
   aspect-ratio:3/4;
-  background:var(--navy-deep);
+  background:var(--cream-2);
   border-radius:3px;
   overflow:hidden;
   border:1px solid var(--gold);
@@ -333,12 +347,12 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
   width:100%; height:100%;
   object-fit:contain;
   object-position:center;
-  background:var(--navy-deep);
+  background:var(--cream-2);
 }
 .couple-name{
   font-family:var(--font-display);
   font-size:1.7rem;
-  color:var(--gold-bright);
+  color:var(--brown);
   margin:0 0 6px;
 }
 .couple-role{
@@ -348,25 +362,25 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 .couple-meta{
   font-size:.95rem; color:var(--ink-soft); line-height:1.8;
 }
-.couple-meta b{ color:var(--gold-bright); font-weight:600; }
+.couple-meta b{ color:var(--ink); font-weight:600; }
 .couple-divider{
   display:flex; align-items:center; justify-content:center;
-  gap:10px; color:var(--gold);
+  gap:10px; color:var(--gold-deep);
   font-family:var(--font-script); font-size:1.8rem;
 }
 .couple-divider .line{ width:40px; height:1px; background:var(--gold); }
 
 /* =========================================================
-   7. EVENTS / ACARA
+   7. EVENTS / ACARA  (COKLAT — section.alt)
    ========================================================= */
 .event-card{
   background:rgba(0,0,0,.2);
-  border:1px solid var(--ivory-line);
+  border:1px solid rgba(201,162,75,.4);
   border-radius:14px;
   padding:26px 22px;
   margin-bottom:22px;
   text-align:center;
-  box-shadow:var(--shadow);
+  box-shadow:var(--shadow-dark);
 }
 .event-card h3{
   font-family:var(--font-display);
@@ -376,20 +390,20 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 }
 .event-card .event-sub{
   font-size:.75rem; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--gold-deep); margin-bottom:16px;
+  color:var(--gold-bright); margin-bottom:16px;
 }
 .event-row{
   display:flex; align-items:flex-start; gap:10px;
-  text-align:left; font-size:.92rem; color:var(--ink);
+  text-align:left; font-size:.92rem; color:var(--on-brown);
   padding:8px 0;
-  border-top:1px dashed var(--ivory-line);
+  border-top:1px dashed rgba(201,162,75,.4);
 }
 .event-row:first-of-type{ border-top:none; }
-.event-row svg{ flex:0 0 auto; margin-top:3px; color:var(--gold-deep); }
+.event-row svg{ flex:0 0 auto; margin-top:3px; color:var(--gold-bright); }
 .btn-maps{
   display:inline-flex; align-items:center; gap:8px;
   margin-top:16px;
-  background:var(--gold); color:var(--navy-deep); font-weight:600;
+  background:var(--gold); color:var(--brown-deep); font-weight:600;
   text-decoration:none;
   font-size:.8rem; letter-spacing:.08em;
   padding:10px 20px; border-radius:999px;
@@ -400,16 +414,16 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
   margin:26px 0 6px;
 }
 .cd-box{
-  background:rgba(0,0,0,.28); color:var(--gold-bright);
-  border:1px solid var(--ivory-line);
+  background:rgba(0,0,0,.25); color:var(--gold-bright);
+  border:1px solid rgba(201,162,75,.4);
   border-radius:10px; padding:12px 10px; min-width:60px;
   text-align:center;
 }
 .cd-box .num{ font-family:var(--font-display); font-size:1.5rem; font-weight:600; color:var(--gold-bright); }
-.cd-box .lbl{ font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; opacity:.85; }
+.cd-box .lbl{ font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--on-brown-soft); }
 
 /* =========================================================
-   8. GALLERY  (on navy background — framed, no-crop photos)
+   8. GALLERY  (CREAM)
    ========================================================= */
 .gallery-grid{
   display:grid; grid-template-columns:repeat(2,1fr);
@@ -417,11 +431,12 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 }
 .photo-frame{
   aspect-ratio:3/4;
-  background:var(--gold-bright);
+  background:#FFFFFF;
+  border:1px solid var(--cream-line);
   border-radius:8px;
   padding:6px;
   cursor:pointer;
-  box-shadow:0 10px 24px -12px rgba(15,1,4,.7);
+  box-shadow:0 10px 24px -12px rgba(59,42,30,.45);
   transition:transform .3s ease;
 }
 .photo-frame:hover{ transform:translateY(-3px); }
@@ -430,12 +445,12 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
   object-fit:contain;
   object-position:center;
   border-radius:3px;
-  background:var(--navy-deep);
+  background:var(--cream-2);
 }
 
 #lightbox{
   position:fixed; inset:0; z-index:80;
-  background:rgba(25,2,7,.95);
+  background:rgba(25,16,9,.95);
   display:none; align-items:center; justify-content:center;
   padding:20px;
 }
@@ -455,26 +470,26 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 #lightbox .lb-next{ right:6px; }
 
 /* =========================================================
-   10. UCAPAN & DOA (WISHES)  (on navy background)
+   10. UCAPAN & DOA (WISHES)  (COKLAT — section.alt)
    ========================================================= */
 #wishForm{ display:flex; flex-direction:column; gap:12px; margin-top:10px; }
 .wish-notice{
-  background:rgba(212,175,55,.14); border:1px solid var(--gold);
+  background:rgba(201,162,75,.14); border:1px solid var(--gold);
   color:var(--gold-bright); font-size:.78rem; line-height:1.5;
   padding:10px 14px; border-radius:8px; margin-bottom:14px;
 }
 #wishForm input, #wishForm select, #wishForm textarea{
   font-family:var(--font-body);
   border:1px solid var(--gold);
-  background:#FFF8E6;
+  background:var(--cream);
   border-radius:8px;
   padding:12px 14px;
   font-size:.95rem;
-  color:#3A0A12;
+  color:var(--ink);
 }
 #wishForm textarea{ resize:vertical; min-height:80px; }
 .btn-send{
-  background:var(--gold); color:var(--navy-deep);
+  background:var(--gold); color:var(--brown-deep);
   border:none; border-radius:999px; padding:13px;
   font-size:.85rem; letter-spacing:.1em; text-transform:uppercase;
   cursor:pointer; font-weight:600;
@@ -483,24 +498,26 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 
 #wishList{ margin-top:28px; display:flex; flex-direction:column; gap:14px; max-height:420px; overflow-y:auto; padding-right:4px; }
 .wish-item{
-  background:rgba(0,0,0,.22); border-left:3px solid var(--gold);
+  background:rgba(0,0,0,.2); border-left:3px solid var(--gold);
   border-radius:6px; padding:14px 16px;
 }
 .wish-name{ font-weight:600; color:var(--gold-bright); font-family:var(--font-display); font-size:1.1rem; }
-.wish-status{ font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--on-navy-soft); margin-left:6px; }
-.wish-text{ font-size:.9rem; color:var(--on-navy); margin-top:3px; line-height:1.55; }
-.wish-empty, .wish-loading{ text-align:center; color:var(--on-navy-soft); font-style:italic; font-size:.88rem; }
+.wish-status{ font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--on-brown-soft); margin-left:6px; }
+.wish-text{ font-size:.9rem; color:var(--on-brown); margin-top:3px; line-height:1.55; }
+.wish-empty, .wish-loading{ text-align:center; color:var(--on-brown-soft); font-style:italic; font-size:.88rem; }
 
 /* =========================================================
-   11. CLOSING
+   11. CLOSING  (CREAM)
    ========================================================= */
 #closing{
-  text-align:center; background:var(--navy-deep); color:var(--gold-bright);
+  text-align:center; background:var(--cream); color:var(--ink);
   padding:70px 30px 90px;
 }
-#closing .cover-monogram{ font-size:2.6rem; }
-#closing p{ line-height:1.8; color:var(--gold-bright); }
-.closing-family{ margin-top:26px; font-family:var(--font-display); font-size:1.2rem; }
+#closing .cover-monogram{ font-size:2.6rem; color:var(--gold-deep); text-shadow:none; }
+/* !important dipakai karena index.html menulis warna judul secara inline */
+#closing .section-title{ color:var(--brown) !important; }
+#closing p{ line-height:1.8; color:var(--ink-soft); }
+.closing-family{ margin-top:26px; font-family:var(--font-display); font-size:1.2rem; color:var(--brown); }
 
 .social-links{
   display:flex; justify-content:center; gap:14px;
@@ -508,21 +525,21 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 }
 .social-btn{
   width:46px; height:46px; border-radius:50%;
-  border:1px solid rgba(242,217,138,.5);
+  border:1px solid var(--gold-deep);
   display:flex; align-items:center; justify-content:center;
-  color:var(--gold-bright);
+  color:var(--gold-deep);
   transition:background .25s ease, color .25s ease, transform .2s ease;
   text-decoration:none;
 }
-.social-btn:hover{ background:var(--gold); color:var(--navy-deep); transform:translateY(-2px); }
+.social-btn:hover{ background:var(--gold-deep); color:var(--cream); transform:translateY(-2px); }
 .social-handle{
-  font-size:.68rem; letter-spacing:.06em; color:rgba(242,217,138,.7);
+  font-size:.68rem; letter-spacing:.06em; color:var(--ink-soft);
   margin-top:14px;
 }
 
 .credit{
   margin-top:32px; font-size:.68rem; letter-spacing:.1em;
-  color:rgba(242,217,138,.6);
+  color:var(--ink-soft); opacity:.8;
 }
 
 /* =========================================================
@@ -532,10 +549,10 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
   position:fixed; bottom:22px; right:calc(50% - min(50%, var(--card-max)/2) + 22px);
   z-index:65;
   width:52px; height:52px; border-radius:50%;
-  background:var(--navy); border:1px solid var(--gold);
+  background:var(--brown); border:1px solid var(--gold);
   color:var(--gold-bright);
   display:flex; align-items:center; justify-content:center;
-  cursor:pointer; box-shadow:var(--shadow-navy);
+  cursor:pointer; box-shadow:var(--shadow-dark);
   animation:spin 6s linear infinite;
   animation-play-state:paused;
 }
@@ -575,7 +592,12 @@ body.curtain-open #curtain-right{ transform:translateX(102%); }
 
 /* Focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
-  outline:2px solid var(--gold-bright); outline-offset:2px;
+  outline:2px solid var(--gold-deep); outline-offset:2px;
+}
+section.alt a:focus-visible, section.alt button:focus-visible,
+section.alt input:focus-visible, section.alt textarea:focus-visible, section.alt select:focus-visible,
+#cover button:focus-visible, #lightbox button:focus-visible, #musicToggle:focus-visible{
+  outline-color:var(--gold-bright);
 }
 
 /* =========================================================
@@ -618,7 +640,9 @@ section{ padding:56px 20px; }
 #musicToggle{ right:max(22px, calc(50% - min(50%, var(--card-max)/2) + 22px)); }
 
 /* =========================================================
-   BOTANICAL FRAME — Sudut Daun Eucalyptus & Pembatas Floral Cat Air
+   BOTANICAL FRAME — Sudut Daun & Pembatas Floral Cat Air
+   Default (section cream)  = daun emas tua
+   section.alt (coklat)     = daun emas muda
    ========================================================= */
 .botanical-frame{ position:relative; }
 .botanical-frame::before,
@@ -634,19 +658,19 @@ section{ padding:56px 20px; }
 }
 .botanical-frame::before{
   top:0; left:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23B8902C' stroke-width='1.4' stroke-linecap='round' opacity='0.85'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23D4AF37' opacity='0.88' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23E6C95F' opacity='0.85' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23B8902C' opacity='0.85' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23D4AF37' opacity='0.82' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23F0DA8A' opacity='0.78' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23B8902C' opacity='0.72' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23A27C2E' stroke-width='1.4' stroke-linecap='round' opacity='0.85'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23B8923F' opacity='0.88' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23CDB06A' opacity='0.85' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23A27C2E' opacity='0.85' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23B8923F' opacity='0.82' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23D9C284' opacity='0.78' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23A27C2E' opacity='0.72' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
 }
 .botanical-frame::after{
   bottom:0; right:0;
   transform:rotate(180deg);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23B8902C' stroke-width='1.4' stroke-linecap='round' opacity='0.85'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23D4AF37' opacity='0.88' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23E6C95F' opacity='0.85' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23B8902C' opacity='0.85' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23D4AF37' opacity='0.82' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23F0DA8A' opacity='0.78' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23B8902C' opacity='0.72' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23A27C2E' stroke-width='1.4' stroke-linecap='round' opacity='0.85'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23B8923F' opacity='0.88' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23CDB06A' opacity='0.85' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23A27C2E' opacity='0.85' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23B8923F' opacity='0.82' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23D9C284' opacity='0.78' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23A27C2E' opacity='0.72' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
 }
-/* Varian untuk section berlatar gelap (.alt) — daun dibuat lebih terang agar kontras */
+/* Varian untuk section coklat (.alt) — daun dibuat lebih terang agar kontras */
 section.alt.botanical-frame::before{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23F0DA8A' stroke-width='1.4' stroke-linecap='round' opacity='0.8'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23F5E3A3' opacity='0.85' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23F0DA8A' opacity='0.8' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23E6C95F' opacity='0.8' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23F5E3A3' opacity='0.75' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23F0DA8A' opacity='0.7' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23E6C95F' opacity='0.65' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23E6CF8E' stroke-width='1.4' stroke-linecap='round' opacity='0.8'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23F0DDA3' opacity='0.85' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23E6CF8E' opacity='0.8' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23D4B96F' opacity='0.8' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23F0DDA3' opacity='0.75' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23E6CF8E' opacity='0.7' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23D4B96F' opacity='0.65' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
 }
 section.alt.botanical-frame::after{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23F0DA8A' stroke-width='1.4' stroke-linecap='round' opacity='0.8'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23F5E3A3' opacity='0.85' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23F0DA8A' opacity='0.8' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23E6C95F' opacity='0.8' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23F5E3A3' opacity='0.75' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23F0DA8A' opacity='0.7' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23E6C95F' opacity='0.65' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M6 6 C24 12,36 22,42 40 C48 58,58 68,76 74' fill='none' stroke='%23E6CF8E' stroke-width='1.4' stroke-linecap='round' opacity='0.8'/%3E%3Cellipse cx='12' cy='9' rx='7.5' ry='4.4' fill='%23F0DDA3' opacity='0.85' transform='rotate(-32 12 9)'/%3E%3Cellipse cx='22' cy='17' rx='8.5' ry='5' fill='%23E6CF8E' opacity='0.8' transform='rotate(-14 22 17)'/%3E%3Cellipse cx='33' cy='29' rx='8' ry='4.7' fill='%23D4B96F' opacity='0.8' transform='rotate(8 33 29)'/%3E%3Cellipse cx='44' cy='41' rx='9' ry='5.2' fill='%23F0DDA3' opacity='0.75' transform='rotate(22 44 41)'/%3E%3Cellipse cx='55' cy='53' rx='7.5' ry='4.4' fill='%23E6CF8E' opacity='0.7' transform='rotate(36 55 53)'/%3E%3Cellipse cx='65' cy='63' rx='7' ry='4.2' fill='%23D4B96F' opacity='0.65' transform='rotate(46 65 63)'/%3E%3C/svg%3E");
 }
 
 /* Pembatas bunga cat air (watercolor floral divider) */
@@ -656,10 +680,10 @@ section.alt.botanical-frame::after{
   background-repeat:no-repeat;
   background-position:center;
   background-size:contain;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 24'%3E%3Cline x1='0' y1='12' x2='86' y2='12' stroke='%23D4AF37' stroke-width='1' opacity='0.65'/%3E%3Cline x1='134' y1='12' x2='220' y2='12' stroke='%23D4AF37' stroke-width='1' opacity='0.65'/%3E%3Cg transform='translate(110,12)'%3E%3Ccircle cx='-6' cy='-3' r='4.6' fill='%23E9C766' opacity='0.55'/%3E%3Ccircle cx='6' cy='-3' r='4.6' fill='%23F2D98A' opacity='0.5'/%3E%3Ccircle cx='-6' cy='3.5' r='4.6' fill='%23C9A227' opacity='0.5'/%3E%3Ccircle cx='6' cy='3.5' r='4.6' fill='%23E9C766' opacity='0.45'/%3E%3Ccircle r='3.4' fill='%23C9A227' opacity='0.7'/%3E%3Ccircle r='1.8' fill='%23D4AF37' opacity='0.9'/%3E%3C/g%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 24'%3E%3Cline x1='0' y1='12' x2='86' y2='12' stroke='%23B8923F' stroke-width='1' opacity='0.7'/%3E%3Cline x1='134' y1='12' x2='220' y2='12' stroke='%23B8923F' stroke-width='1' opacity='0.7'/%3E%3Cg transform='translate(110,12)'%3E%3Ccircle cx='-6' cy='-3' r='4.6' fill='%23C9A862' opacity='0.6'/%3E%3Ccircle cx='6' cy='-3' r='4.6' fill='%23D9C284' opacity='0.55'/%3E%3Ccircle cx='-6' cy='3.5' r='4.6' fill='%23A27C2E' opacity='0.5'/%3E%3Ccircle cx='6' cy='3.5' r='4.6' fill='%23C9A862' opacity='0.5'/%3E%3Ccircle r='3.4' fill='%23A27C2E' opacity='0.75'/%3E%3Ccircle r='1.8' fill='%238F6B1F' opacity='0.95'/%3E%3C/g%3E%3C/svg%3E");
 }
 section.alt .floral-divider{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 24'%3E%3Cline x1='0' y1='12' x2='86' y2='12' stroke='%23F0DA8A' stroke-width='1' opacity='0.6'/%3E%3Cline x1='134' y1='12' x2='220' y2='12' stroke='%23F0DA8A' stroke-width='1' opacity='0.6'/%3E%3Cg transform='translate(110,12)'%3E%3Ccircle cx='-6' cy='-3' r='4.6' fill='%23F2D98A' opacity='0.6'/%3E%3Ccircle cx='6' cy='-3' r='4.6' fill='%23F8EBB8' opacity='0.55'/%3E%3Ccircle cx='-6' cy='3.5' r='4.6' fill='%23E9C766' opacity='0.55'/%3E%3Ccircle cx='6' cy='3.5' r='4.6' fill='%23F2D98A' opacity='0.5'/%3E%3Ccircle r='3.4' fill='%23E9C766' opacity='0.75'/%3E%3Ccircle r='1.8' fill='%23F5E3A3' opacity='0.95'/%3E%3C/g%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 24'%3E%3Cline x1='0' y1='12' x2='86' y2='12' stroke='%23E6CF8E' stroke-width='1' opacity='0.65'/%3E%3Cline x1='134' y1='12' x2='220' y2='12' stroke='%23E6CF8E' stroke-width='1' opacity='0.65'/%3E%3Cg transform='translate(110,12)'%3E%3Ccircle cx='-6' cy='-3' r='4.6' fill='%23E6CF8E' opacity='0.65'/%3E%3Ccircle cx='6' cy='-3' r='4.6' fill='%23F0DDA3' opacity='0.6'/%3E%3Ccircle cx='-6' cy='3.5' r='4.6' fill='%23D4B96F' opacity='0.6'/%3E%3Ccircle cx='6' cy='3.5' r='4.6' fill='%23E6CF8E' opacity='0.55'/%3E%3Ccircle r='3.4' fill='%23D4B96F' opacity='0.8'/%3E%3Ccircle r='1.8' fill='%23F8EBC4' opacity='0.95'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 @media (max-width:420px){
