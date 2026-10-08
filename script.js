@@ -21,7 +21,7 @@
    ini adalah cara paling sederhana & umum dipakai.
    ========================================================= */
 const CONFIG = {
-  JSONBIN_BIN_ID: "6aaf804affd5d160531b5001",
+  JSONBIN_BIN_ID: "6ac715c9ac6210605a1e6292",
   JSONBIN_API_KEY: "$2a$10$nou5c3yZntdxwBqnGEEOvuCkZpg9GT4CfSp1IXgNhJpKQzhxI8NYO",
   // Pemberkatan: Kamis, 15 Oktober 2026, pukul 15.00 WITA (UTC+8) — Kab. Kupang, NTT.
   WEDDING_DATE: "2026-10-15T15:00:00+08:00",
