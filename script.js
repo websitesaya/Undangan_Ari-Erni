@@ -25,7 +25,7 @@ const CONFIG = {
   JSONBIN_API_KEY: "$2a$10$nou5c3yZntdxwBqnGEEOvuCkZpg9GT4CfSp1IXgNhJpKQzhxI8NYO",
   // Pemberkatan: Kamis, 15 Oktober 2026, pukul 15.00 WITA (UTC+8) — Kab. Kupang, NTT.
   WEDDING_DATE: "2026-10-15T15:00:00+08:00",
-  GALLERY_COUNT: 12
+  GALLERY_COUNT: 8
 };
 
 const JSONBIN_BASE = `https://api.jsonbin.io/v3/b/${CONFIG.JSONBIN_BIN_ID}`;
